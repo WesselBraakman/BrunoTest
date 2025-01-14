@@ -1,0 +1,30 @@
+meta {
+  name: POST Employee 200
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BaseURL}}ansatte
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  apikey: 12345
+}
+
+auth:basic {
+  username: Postman
+  password: Welkom123!@#
+}
+
+body:json {
+  {
+    "fornavn": "Wessel",
+    "etternavn": "Braakman",
+    "avdeling": "RADGIVNING_TEST_OG_KVALITETSSIKRING",
+    "alder": 37
+  }
+}

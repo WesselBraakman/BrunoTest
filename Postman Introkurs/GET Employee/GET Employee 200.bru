@@ -1,0 +1,28 @@
+meta {
+  name: GET Employee 200
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{BaseURL}}employee?id=123456
+  body: none
+  auth: basic
+}
+
+params:query {
+  id: 123456
+}
+
+headers {
+  Apikey: testapikey
+}
+
+auth:basic {
+  username: Postman
+  password: Welkom123!@#
+}
+
+tests {
+  // TODO: CREATE TESTS!
+}

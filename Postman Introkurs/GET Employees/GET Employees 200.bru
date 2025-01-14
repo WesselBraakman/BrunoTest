@@ -1,0 +1,33 @@
+meta {
+  name: GET Employees 200
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{BaseURL}}employees
+  body: none
+  auth: basic
+}
+
+headers {
+  Apikey: {{Apikey}}
+}
+
+auth:basic {
+  username: Postman
+  password: Welkom123!@#
+}
+
+tests {
+  test("Status code is 200", function () {
+    expect(res.getStatus()).to.equal(201);
+  });
+  
+  ResponseBody = res.getBody();
+  
+  test('employees element is an array', function() {
+    expect(ResponseBody.employees).to.be.an('array');
+  })
+  
+}
